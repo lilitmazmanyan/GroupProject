@@ -5,6 +5,14 @@ public class EpamEmployee {
     private String favoritePhrase;
     private String lecturingSubject;
 
+    public EpamEmployee(String fullName, String hometown, String skills, String favoritePhrase, String lecturingSubject) {
+        this.fullName = fullName;
+        this.hometown = hometown;
+        this.skills = skills;
+        this.favoritePhrase = favoritePhrase;
+        this.lecturingSubject = lecturingSubject;
+    }
+
     public String getFullName() {
         return fullName;
     }
