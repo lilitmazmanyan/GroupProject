@@ -22,12 +22,12 @@ public class Main {
         //if there's a match return that employee's index
         //else return -1
         String name = getInput();
-        for (int i = 0; i < epamEmployees.length; i++){
-            if(epamEmployees[i] == name)
+        for (int i = 0; i < epamEmployees.size(); i++){
+            if(epamEmployees.get(i).equals(name)) {
                 return i;
-            else
-                return -1;
+            }
         }
+        return -1;
     }
 
     public static void showMenu(){
