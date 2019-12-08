@@ -61,28 +61,26 @@ public class EpamArmenia {
         return employees.length;
     }
     //Shows How many people came from the same town
-    public void demographics(){
-        String arr[numberOfEmployees()];
-        int arrIndex=0;
-        int count=0;
-        boolean sameHomeTown=false;
-        for (int i=0;i<employees.length;i++){
-            for(j=i;j<employees.length;j++){
-                for( String a: arr){
-                    if(employees[i].getHometown().equals(a)){
-                        sameHomeTown=true;
+    public void demographics() {
+        String[] arr = new String[numberOfEmployees()];
+        int arrIndex = 0;
+        int count = 0;
+        boolean sameHomeTown = false;
+        for (int i = 0; i < employees.length; i++) {
+            for (int j = i; j < employees.length; j++) {
+                for (String a : arr) {
+                    if (employees[i].getHometown().equals(a)) {
+                        sameHomeTown = true;
                         break;
-                    }
-                    else{
-                        arr[arrIndex]=employees[i].getHomeTown();
-                        sameHomeTown=false;
+                    } else {
+                        arr[arrIndex] = employees[i].getHometown();
+                        sameHomeTown = false;
                         arrIndex++;
                     }
                 }
-                if(!sameHomeTown){
+                if (!sameHomeTown) {
                     break;
-                }
-                 else if(employees[j].getHometown().equals(employees[j].getHometown())){
+                } else if (employees[j].getHometown().equals(employees[j].getHometown())) {
                     count++;
                 }
             }
