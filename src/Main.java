@@ -108,7 +108,7 @@ public class Main {
                 "SoftwareDevelopement, Web Applications", "",
                 "Java", "since May 2019", "SEUA", "June 17");
 
-        EpamEmployee Artur = new EpamEmployee("Artem Arutuynyan", "Yerevan",
+        EpamEmployee Artur = new EpamEmployee("Artur Arutuynyan", "Yerevan",
                 "Java, Linux", "By the way",
                 "Java", "since August 2019",
                 "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "");
