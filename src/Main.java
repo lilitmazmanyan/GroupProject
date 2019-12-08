@@ -11,7 +11,7 @@ public class Main {
         if (input.equals("quit")) {
             continueTheProgram = false;
             System.out.println("Thanks for trying our program");
-            System.out.println("Please rate our program forom 1 to 10.");
+            System.out.println("Please rate our program from 1 to 10.");
             int rating = scanner.nextInt();
             switch (rating){
                 case 1:
@@ -39,10 +39,10 @@ public class Main {
     }
 
     public static void showEmployeeNamesMenu(EpamArmenia epam) {
-        System.out.println("Here are some epam employees");
+        System.out.println("Here are some EPAM employees");
         epam.showEmployeeNames();
         System.out.println();
-        System.out.println("Please enter the full name of epam employee");
+        System.out.println("Please enter the full name of EPAM employee");
         //Show all the names of epam employees
         //ask the user to enter the name he wants to search
 
@@ -66,26 +66,26 @@ public class Main {
         EpamEmployee[] employees = new EpamEmployee[5];
 
         employees[0] = new EpamEmployee("Narek Musakhanyan", "Goris",
-                "Java, JavaScript, JavaServer Faces", "don't know",
+                "Java, JavaScript, JavaServer Faces", "Unknown",
                 "YSU", "Version control with Git",
-                "since August 2017", "don't know");
+                "Since August 2017", "Unknown");
 
         employees[1] = new EpamEmployee("Edik Mkoyan", "Gyumri",
-                "Linux, Python, Networking", "Tak vot",
-                "SEUA", "Data Networking for developers", "since July 2019", "Jan 27");
+                "Linux, Python, Networking", "Тк вот!",
+                "NPUA", "Data Networking for developers", "Since July 2019", "Jan 27");
 
         employees[2] = new EpamEmployee("Hayk Sargsyan", "Yerevan",
-                "Java Script, NodeJs, Angular", "don't know",
-                "SEUA", "Web Technologies", "since February 2019", "Oct 4");
+                "Java Script, NodeJs, Angular", "Unknown",
+                "NPUA", "Web Technologies", "Since February 2019", "Oct 4");
 
         employees[3] = new EpamEmployee("Artem Sukiasyan", "Yerevan",
-                "Software Developement, Web Applications", "don't know",
-                "SEUA", "Java", "since May 2019", "June 17");
+                "Software Developement, Web Applications", "Unknown",
+                "NPUA", "Java", "Since May 2019", "June 17");
 
         employees[4] = new EpamEmployee("Artur Arutyunyan", "Yerevan",
-                "Java, Linux", "By the way",
-                "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "Java",
-                "since August 2019", "don't know");
+                "Java, Linux", "Bye the way",
+                "AUA, Yerevan State Conservatory after Komitas, Yerevan Northern University", "Java",
+                "Since August 2019", "Unknown");
         return employees;
     }
 
