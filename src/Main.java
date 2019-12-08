@@ -11,6 +11,14 @@ public class Main {
     }
 
     public static void showEmployeeNamesMenu(){
+        System.out.println("Narek Musakhanyan");
+        System.out.println("Edik Mkoyan");
+        System.out.println("Hayk Sargsyan");
+        System.out.println("Artem Sukiasyan");
+        System.out.println("Artur Arutyunyan");
+        System.out.println("Please enter the full name of epam employee");
+        Scanner scan=new Scanner(System.in);
+        String employeeName = scan.nextLine();
         //Show all the names of empam employees
         //ask the user to enter the name he wants to search
 
@@ -31,6 +39,22 @@ public class Main {
     }
 
     public static void showMenu(){
+        System.out.println("Please enter a letter");
+        Scanner sc=new Scanner(System.in);
+        char letter = sc.nextLine();
+        switch (letter) {
+            case  (a):
+                //;
+                break;
+            case (b):
+               // ;
+                break;
+...
+            case (c):
+              //  ;
+                break;
+
+        }
         //Show what info we can show, enumerating it with (a,b,c)
         //ask the user for a letter
         //add a switch with the letter as argument
@@ -63,11 +87,6 @@ public class Main {
                 showMenu();
             }
         }
-
-
-
-
-
 
 
     }
