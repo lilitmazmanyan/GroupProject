@@ -8,7 +8,7 @@ public class Main {
         //Ask the user for the name of employee and keep it in a string
         scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        if (input.equals("quit")){
+        if (input.equals("quit")) {
             continueTheProgram = false;
             System.out.println("Thanks for trying our program");
             System.out.println("Please rate our program forom 1 to 10.");
@@ -66,27 +66,26 @@ public class Main {
         EpamEmployee[] employees = new EpamEmployee[5];
 
         employees[0] = new EpamEmployee("Narek Musakhanyan", "Goris",
-                "Java, JavaScript, JavaServer Faces", " ",
-                "Version control with Git", "since August 2017",
-                "YSU", "");
+                "Java, JavaScript, JavaServer Faces", "don't know",
+                "YSU", "Version control with Git",
+                "since August 2017", "don't know");
 
         employees[1] = new EpamEmployee("Edik Mkoyan", "Gyumri",
                 "Linux, Python, Networking", "Tak vot",
-                "Data Networking for developers", "since July 2019", "SEUA", "Jan 27");
+                "SEUA", "Data Networking for developers", "since July 2019", "Jan 27");
 
         employees[2] = new EpamEmployee("Hayk Sargsyan", "Yerevan",
-                "Java Script, NodeJs, Angular", "",
+                "Java Script, NodeJs, Angular", "don't know",
                 "SEUA", "Web Technologies", "since February 2019", "Oct 4");
 
-        employees[3] = new EpamEmployee("Artem Sukiasyan", "yerevan",
-                "SoftwareDevelopement, Web Applications", "",
-                "Java", "since May 2019", "SEUA", "June 17");
+        employees[3] = new EpamEmployee("Artem Sukiasyan", "Yerevan",
+                "Software Developement, Web Applications", "don't know",
+                "SEUA", "Java", "since May 2019", "June 17");
 
-        employees[4] = new EpamEmployee("Artur Arutuynyan", "Yerevan",
+        employees[4] = new EpamEmployee("Artur Arutyunyan", "Yerevan",
                 "Java, Linux", "By the way",
-                "Java", "since August 2019",
-                "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "");
-
+                "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "Java",
+                "since August 2019", "don't know");
         return employees;
     }
 
@@ -96,7 +95,7 @@ public class Main {
         EpamEmployee[] employees = instantiateObjects();
 
         EpamArmenia epam = new EpamArmenia(employees, 5, "Some features");
-        while (continueTheProgram){
+        while (continueTheProgram) {
             EpamEmployee employee = null;
             boolean validName = false;
             System.out.println("To exit the application type quit");
@@ -104,9 +103,9 @@ public class Main {
                 showEmployeeNamesMenu(epam);//then it goes to getInput and now we have input
                 scanner = new Scanner(System.in);
                 String fullName = getInput();
-                if (fullName.equals("quit")){
+                if (fullName.equals("quit")) {
                     breakLoop = true;
-                    break ;
+                    break;
                 }
                 employee = epam.getByFullName(fullName);
                 if (employee == null) {
@@ -116,12 +115,12 @@ public class Main {
                     validName = true;
                 }
             }
-            if (breakLoop){
+            if (breakLoop) {
                 break;
             }
             showMenu();
             String infoType = getInput();
-            if (infoType.equals("quit")){
+            if (infoType.equals("quit")) {
                 break;
             }
             showInfo(infoType, employee);
@@ -156,7 +155,7 @@ public class Main {
                 System.out.println(employee.getBirthday());
                 break;
             default:
-                System.out.println("No such info about "+employee.getFullName());
+                System.out.println("No such info about " + employee.getFullName());
                 break;
         }
     }
