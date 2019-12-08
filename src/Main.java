@@ -86,14 +86,34 @@ public class Main {
         //show output for that input
     }
 
-    public static instantiateObjects() {
+    public static void instantiateObjects() {
         //add all employee info
         //store employees in the epamEmployees array
         //instantiate EpamArmenia class
+
         EpamEmployee Narek = new EpamEmployee("Narek Musakhanyan", "Goris",
-                "Java, JavaScript, JavaServer Faces", " ", "YSU",
+                "Java, JavaScript, JavaServer Faces", " ",
                 "Version control with Git", "since August 2017",
-                "don't know");
+                "YSU", "");
+
+        EpamEmployee Edik = new EpamEmployee("Edik Mkoyan", "Gyumri",
+                "Linux, Python, Networking", "Tak vot",
+                "Data Networking for developers", "since July 2019", "SEUA", "Jan 27");
+
+        EpamEmployee Hayk = new EpamEmployee("Hayk Sargsyan", "Yerevan",
+                "Java Script, NodeJs, Angular", "",
+                "Web Technologies", "since February 2019", "SEUA", "Oct 4");
+
+        EpamEmployee Artem = new EpamEmployee("Artem Sukiasyan", "yerevan",
+                "SoftwareDevelopement, Web Applications", "",
+                "Java", "since May 2019", "SEUA", "June 17");
+
+        EpamEmployee Artur = new EpamEmployee("Artem Arutuynyan", "Yerevan",
+                "Java, Linux", "By the way",
+                "Java", "since August 2019",
+                "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "");
+
+
     }
 
     public static void main(String[] args) {
