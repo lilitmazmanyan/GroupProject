@@ -16,9 +16,7 @@ public class Main {
         System.out.println("Hayk Sargsyan");
         System.out.println("Artem Sukiasyan");
         System.out.println("Artur Arutyunyan");
-        System.out.println("Please enter the full name of epam employee");
-        Scanner scan=new Scanner(System.in);
-        String employeeName = scan.nextLine();
+        getInput();
         //Show all the names of empam employees
         //ask the user to enter the name he wants to search
 
@@ -39,19 +37,38 @@ public class Main {
     }
 
     public static void showMenu(){
-        System.out.println("Please enter a letter");
+        System.out.println("hometown");
+        System.out.println("topSkills");
+        System.out.println("favoritePhrase");
+        System.out.println("University");
+        System.out.println("Lecturing subject");
+        System.out.println("workingInEpam");
+        System.out.println("Birthday");
+        System.out.println("Please enter your choice");
         Scanner sc=new Scanner(System.in);
-        char letter = sc.nextLine();
-        switch (letter) {
-            case  (a):
+        String choice = sc.nextLine();
+        switch (choice) {
+            case  ():
                 //;
                 break;
-            case (b):
+            case (topSkills):
                // ;
                 break;
 ...
-            case (c):
+            case (favoritePhrase):
               //  ;
+                break;
+            case (University):
+                //  ;
+                break;
+            case (Lecturing subject):
+                //  ;
+                break;
+            case (workingInEpam):
+                //  ;
+                break;
+            case (Birthday):
+                //  ;
                 break;
 
         }
