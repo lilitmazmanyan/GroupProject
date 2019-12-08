@@ -1,41 +1,27 @@
 import java.util.Scanner;
 
 public class Main {
-    public static EpamEmployee[] epamEmployees;
+    private static Scanner scanner;
+    static boolean continueTheProgram = true;
 
     public static String getInput() {
         //Ask the user for the name of employee and keep it in a string
-        Scanner input = new Scanner(System.in);
-        String name = input.next();
-        return name;
+        scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        if (input.equals("quit")){
+            continueTheProgram = false;
+        }
+        return input;
     }
 
-    public static void showEmployeeNamesMenu() {
+    public static void showEmployeeNamesMenu(EpamArmenia epam) {
         System.out.println("Here are some epam employees");
-        System.out.println("Narek Musakhanyan");
-        System.out.println("Edik Mkoyan");
-        System.out.println("Hayk Sargsyan");
-        System.out.println("Artem Sukiasyan");
-        System.out.println("Artur Arutyunyan");
+        epam.showEmployeeNames();
         System.out.println();
         System.out.println("Please enter the full name of epam employee");
-        getInput();
         //Show all the names of epam employees
         //ask the user to enter the name he wants to search
 
-    }
-
-    public static int recognizeEmployee(String name) {
-        //call getInput() and keep the string in a variable
-        //search the value in the employees array
-        //if there's a match return that employee's index
-        //else return -1
-        for (int i = 0; i < epamEmployees.length; i++) {
-            if (epamEmployees[i].equals(name)) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     public static void showMenu() {
@@ -47,83 +33,107 @@ public class Main {
         System.out.println("Lecturing subject");
         System.out.println("workingInEpam");
         System.out.println("Birthday");
-
-        String choice = getInput();
-        switch (choice) {
-            case ("hometown"): {
-
-                break;
-            }
-            case ("topSkills"): {
-                // ;
-                break;
-            }
-            case ("favoritePhrase"): {
-                //  ;
-                break;
-            }
-            case ("University"): {
-                //  ;
-                break;
-            }
-            case ("Lecturing subject"): {
-                //  ;
-                break;
-            }
-            case ("workingInEpam"): {
-                //  ;
-                break;
-            }
-            case ("Birthday"): {
-                //  ;
-                break;
-            }
-
-        }
-        //Show what info we can show, enumerating it with (a,b,c)
-        //ask the user for a letter
-        //add a switch with the letter as argument
-        //show output for that input
     }
 
-    public static void instantiateObjects() {
+    public static EpamEmployee[] instantiateObjects() {
         //add all employee info
         //store employees in the epamEmployees array
         //instantiate EpamArmenia class
+        EpamEmployee[] employees = new EpamEmployee[5];
 
-        EpamEmployee Narek = new EpamEmployee("Narek Musakhanyan", "Goris",
+        employees[0] = new EpamEmployee("Narek Musakhanyan", "Goris",
                 "Java, JavaScript, JavaServer Faces", " ",
                 "Version control with Git", "since August 2017",
                 "YSU", "");
 
-        EpamEmployee Edik = new EpamEmployee("Edik Mkoyan", "Gyumri",
+        employees[1] = new EpamEmployee("Edik Mkoyan", "Gyumri",
                 "Linux, Python, Networking", "Tak vot",
                 "Data Networking for developers", "since July 2019", "SEUA", "Jan 27");
 
-        EpamEmployee Hayk = new EpamEmployee("Hayk Sargsyan", "Yerevan",
+        employees[2] = new EpamEmployee("Hayk Sargsyan", "Yerevan",
                 "Java Script, NodeJs, Angular", "",
-                "Web Technologies", "since February 2019", "SEUA", "Oct 4");
+                "SEUA", "Web Technologies", "since February 2019", "Oct 4");
 
-        EpamEmployee Artem = new EpamEmployee("Artem Sukiasyan", "yerevan",
+        employees[3] = new EpamEmployee("Artem Sukiasyan", "yerevan",
                 "SoftwareDevelopement, Web Applications", "",
                 "Java", "since May 2019", "SEUA", "June 17");
 
-        EpamEmployee Artur = new EpamEmployee("Artem Arutuynyan", "Yerevan",
+        employees[4] = new EpamEmployee("Artem Arutuynyan", "Yerevan",
                 "Java, Linux", "By the way",
                 "Java", "since August 2019",
                 "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "");
 
-
+        return employees;
     }
 
     public static void main(String[] args) {
-        boolean continueTheProgram = true;
         int index;
+        boolean breakLoop = false;
+        EpamEmployee[] employees = instantiateObjects();
 
-        showEmployeeNamesMenu();//then it goes to getInput and now we have input
-        recognizeEmployee(getInput());
+        EpamArmenia epam = new EpamArmenia(employees, 5, "Some features");
+        while (continueTheProgram){
+            EpamEmployee employee = null;
+            boolean validName = false;
+            System.out.println("To exit the application type quit");
+            while (!validName) {
+                showEmployeeNamesMenu(epam);//then it goes to getInput and now we have input
+                scanner = new Scanner(System.in);
+                String fullName = getInput();
+                if (fullName.equals("quit")){
+                    breakLoop = true;
+                    break ;
+                }
+                employee = epam.getByFullName(fullName);
+                if (employee == null) {
+                    System.out.println("Employee with the full name " + fullName + " was not found");
+                    System.out.println("Please type valid name");
+                } else {
+                    validName = true;
+                }
+            }
+            if (breakLoop){
+                break;
+            }
+            showMenu();
+            String infoType = getInput();
+            if (infoType.equals("quit")){
+                break;
+            }
+            showInfo(infoType, employee);
+        }
+    }
 
-
-        showMenu();
+    //Show what info we can show, enumerating it with (a,b,c)
+    //ask the user for a letter
+    //add a switch with the user input for info type as argument
+    //show output for that input
+    public static void showInfo(String choice, EpamEmployee employee) {
+        switch (choice) {
+            case ("hometown"):
+                System.out.println(employee.getHometown());
+                break;
+            case ("topSkills"):
+                System.out.println(employee.getTopSkills());
+                break;
+            case ("favoritePhrase"):
+                System.out.println(employee.getFavoritePhrase());
+                break;
+            case ("University"):
+                System.out.println(employee.getUniversity());
+                break;
+            case ("Lecturing subject"):
+                System.out.println(employee.getLecturingSubject());
+                break;
+            case ("workingInEpam"):
+                System.out.println(employee.getWorkingInEpam());
+                break;
+            case ("Birthday"):
+                System.out.println(employee.getBirthday());
+                break;
+            default:
+                System.out.println("No such info about "+employee.getFullName());
+                break;
+        }
     }
 }

@@ -42,4 +42,19 @@ public class EpamArmenia {
     public void setFeatures(String features) {
         this.features = features;
     }
+
+    public void showEmployeeNames() {
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println((i+1) + ". "+ employees[i].getFullName());
+        }
+    }
+
+    public EpamEmployee getByFullName(String fullName){
+        for (EpamEmployee employee: employees) {
+            if (employee.getFullName().equals(fullName)){
+                return employee;
+            }
+        }
+        return null;
+    }
 }
