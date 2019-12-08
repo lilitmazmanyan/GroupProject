@@ -10,6 +10,30 @@ public class Main {
         String input = scanner.nextLine();
         if (input.equals("quit")){
             continueTheProgram = false;
+            System.out.println("Thanks for trying our program");
+            System.out.println("Please rate our program forom 1 to 10.");
+            int rating = scanner.nextInt();
+            switch (rating){
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    System.out.println("Is our program so bad?  :( ");
+                    break;
+                case 5:
+                case 6:
+                    System.out.println("Thank you anyway.Bye! :|");
+                    break;
+                case 7:
+                case 8:
+                case 9:
+                    System.out.println("Thank you :)");
+                    break;
+                case 10:
+                    System.out.println("WOW Thanks. :)");
+                default:
+                    System.out.println("Please rate us from 1 to 10 :) ");
+            }
         }
         return input;
     }
