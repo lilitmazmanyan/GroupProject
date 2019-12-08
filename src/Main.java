@@ -58,7 +58,7 @@ public class Main {
                 "SoftwareDevelopement, Web Applications", "",
                 "Java", "since May 2019", "SEUA", "June 17");
 
-        employees[4] = new EpamEmployee("Artem Arutuynyan", "Yerevan",
+        employees[4] = new EpamEmployee("Artur Arutuynyan", "Yerevan",
                 "Java, Linux", "By the way",
                 "Java", "since August 2019",
                 "AUA, Yerevan state conservatory after Komitas, Yerevan Northern University", "");
