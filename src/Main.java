@@ -6,7 +6,6 @@ public class Main {
     public static String getInput() {
         //Ask the user for the name of employee and keep it in a string
         Scanner input = new Scanner(System.in);
-
         String name = input.next();
         return name;
     }
@@ -26,12 +25,11 @@ public class Main {
 
     }
 
-    public static int recognizeEmployee() {
+    public static int recognizeEmployee(String name) {
         //call getInput() and keep the string in a variable
         //search the value in the employees array
         //if there's a match return that employee's index
         //else return -1
-        String name = getInput();
         for (int i = 0; i < epamEmployees.length; i++) {
             if (epamEmployees[i].equals(name)) {
                 return i;
@@ -53,7 +51,7 @@ public class Main {
         String choice = getInput();
         switch (choice) {
             case ("hometown"): {
-                //;
+
                 break;
             }
             case ("topSkills"): {
@@ -92,26 +90,20 @@ public class Main {
         //add all employee info
         //store employees in the epamEmployees array
         //instantiate EpamArmenia class
-
+        EpamEmployee Narek = new EpamEmployee("Narek Musakhanyan", "Goris",
+                "Java, JavaScript, JavaServer Faces", " ", "YSU",
+                "Version control with Git", "since August 2017",
+                "don't know");
     }
 
     public static void main(String[] args) {
         boolean continueTheProgram = true;
         int index;
-        while (continueTheProgram) {
-            do {
-                showEmployeeNamesMenu();
-                String nameToSearch = scanner.nextLine();
-                if (nameToSearch == "quit") {
-                    continueTheProgram = false;
-                    break;
-                }
-                int index = recognizeEmployee(nameToSearch);
-            } while (index == -1);
-            if (continueTheProgram) {
-                EpamEmployee selectedEmployee = epamEmployees[index];
-                showMenu();
-            }
-        }
+
+        showEmployeeNamesMenu();//then it goes to getInput and now we have input
+        recognizeEmployee(getInput());
+
+
+        showMenu();
     }
 }
