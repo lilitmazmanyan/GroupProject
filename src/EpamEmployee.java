@@ -1,16 +1,46 @@
 public class EpamEmployee {
     private String fullName;
     private String hometown;
-    private String skills;
+    private String topSkills;
     private String favoritePhrase;
+    private String university;
     private String lecturingSubject;
+    private String workingInEpam;
+    private String birthday;
 
-    public EpamEmployee(String fullName, String hometown, String skills, String favoritePhrase, String lecturingSubject) {
+    public EpamEmployee(String fullName, String hometown, String topSkills, String favoritePhrase, String university, String lecturingSubject, String workingInEpam, String birthday) {
         this.fullName = fullName;
         this.hometown = hometown;
-        this.skills = skills;
+        this.topSkills = topSkills;
         this.favoritePhrase = favoritePhrase;
+        this.university = university;
         this.lecturingSubject = lecturingSubject;
+        this.workingInEpam = workingInEpam;
+        this.birthday = birthday;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+    public String getWorkingInEpam() {
+        return workingInEpam;
+    }
+
+    public void setWorkingInEpam(String workingInEpam) {
+        this.workingInEpam = workingInEpam;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public String getFullName() {
@@ -29,12 +59,12 @@ public class EpamEmployee {
         this.hometown = hometown;
     }
 
-    public String getSkills() {
-        return skills;
+    public String getTopSkills() {
+        return topSkills;
     }
 
-    public void setSkills(String skills) {
-        this.skills = skills;
+    public void setTopSkills(String topSkills) {
+        this.topSkills = topSkills;
     }
 
     public String getFavoritePhrase() {
