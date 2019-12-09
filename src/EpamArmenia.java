@@ -1,8 +1,8 @@
 public class EpamArmenia {
-    public EpamEmployee employees[];
+    public EpamEmployee[] employees;
     public int numberOfEmployees;
     public String location;
-    public  String features;
+    public String features;
 
     public EpamArmenia(EpamEmployee[] employees, int numberOfEmployees, String features) {
         this.employees = employees;
@@ -45,21 +45,23 @@ public class EpamArmenia {
 
     public void showEmployeeNames() {
         for (int i = 0; i < employees.length; i++) {
-            System.out.println((i+1) + ". "+ employees[i].getFullName());
+            System.out.println((i + 1) + ". " + employees[i].getFullName());
         }
     }
 
-    public EpamEmployee getByFullName(String fullName){
-        for (EpamEmployee employee: employees) {
-            if (employee.getFullName().equals(fullName)){
+    public EpamEmployee getByFullName(String fullName) {
+        for (EpamEmployee employee : employees) {
+            if (employee.getFullName().equals(fullName)) {
                 return employee;
             }
         }
         return null;
     }
-    public int numberOfEmployees(){
+
+    public int numberOfEmployees() {
         return employees.length;
     }
+
     //Shows How many people came from the same town
     public void demographics() {
         String[] arr = new String[numberOfEmployees()];
@@ -73,19 +75,17 @@ public class EpamArmenia {
                         sameHomeTown = true;
                         break;
                     } else {
-                        arr[arrIndex] = employees[i].getHometown();
+                        arr[arrIndex++] = employees[i].getHometown();
                         sameHomeTown = false;
-                        arrIndex++;
                     }
                 }
                 if (!sameHomeTown) {
                     break;
-                } else if (employees[j].getHometown().equals(employees[j].getHometown())) {
-                    count++;
                 }
+                count++;
             }
-            System.out.println(arr[arrIndex]+" :" +count);
-            count=0;
+            System.out.println(arr[arrIndex] + " :" + count);
+            count = 0;
         }
     }
 }
