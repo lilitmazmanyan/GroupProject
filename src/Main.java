@@ -68,14 +68,14 @@ public class Main {
         employees[0] = new EpamEmployee("Narek Musakhanyan", "Goris",
                 "Java, JavaScript, JavaServer Faces", "Unknown",
                 "YSU", "Version control with Git",
-                "Since August 2017", "Unknown");
+                "Since August 2017", "March 22");
 
         employees[1] = new EpamEmployee("Edik Mkoyan", "Gyumri",
-                "Linux, Python, Networking", "Тк вот!",
+                "Linux, Python, Networking", "windavoz,Тк вот!",
                 "NPUA", "Data Networking for developers", "Since July 2019", "Jan 27");
 
         employees[2] = new EpamEmployee("Hayk Sargsyan", "Yerevan",
-                "Java Script, NodeJs, Angular", "Unknown",
+                "Java Script, NodeJs, Angular", "kopit asats",
                 "NPUA", "Web Technologies", "Since February 2019", "Oct 4");
 
         employees[3] = new EpamEmployee("Artem Sukiasyan", "Yerevan",
